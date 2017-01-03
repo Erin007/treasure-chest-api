@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Directive.create([
+  {
+    name: 'Someone in Seahawks gear',
+    description: 'Go Hawks!',
+    complete?: "false",
+    point_value: 1,
+    hunt_id: 1
+  }, {
+    name: 'Someone in Sounders gear',
+    description: 'Seattle Sounders - MLS Champs 2016!',
+    complete?: "false",
+    point_value: 1,
+    hunt_id: 1
+  }, {
+    name: 'A fancy mustache',
+    description: '',
+    complete?: "false",
+    point_value: 1,
+    hunt_id: 1
+  }
+])
+
+# Hunt.create!([
+#   {
+#     name: 'Ada First Week Team Building',
+#     organizer_id: 1,
+#     passcode: 'AdaLovelaceCodesIt'
+#   }
+#   ])

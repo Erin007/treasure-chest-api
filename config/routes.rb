@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'directives#index', as: 'index'
+  
   get 'submissions/index'
 
   get 'submissions/new'

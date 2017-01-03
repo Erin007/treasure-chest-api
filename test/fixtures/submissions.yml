@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  directive_id: 1
+  team_id: 1
+  photo: MyString
+  caption: MyText
+  status: 1
+
+two:
+  directive_id: 1
+  team_id: 1
+  photo: MyString
+  caption: MyText
+  status: 1

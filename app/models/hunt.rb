@@ -1,0 +1,2 @@
+class Hunt < ApplicationRecord
+end

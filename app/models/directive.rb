@@ -1,0 +1,2 @@
+class Directive < ApplicationRecord
+end

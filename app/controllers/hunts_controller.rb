@@ -19,4 +19,10 @@ class HuntsController < ApplicationController
 
   def create
   end
+
+private
+  def hunt_params
+    params.require(:hunt).permit(:decription, :passcode, :name, :organizer_id)
+  end
+
 end

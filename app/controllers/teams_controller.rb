@@ -19,4 +19,10 @@ class TeamsController < ApplicationController
 
   def create
   end
+
+private
+  def team_params
+    params.require(:team).permit(:name, :points)
+  end
+
 end

@@ -19,4 +19,10 @@ class PlayersController < ApplicationController
 
   def create
   end
+
+private
+  def player_params
+    params.require(:player).permit(:username)
+  end
+
 end

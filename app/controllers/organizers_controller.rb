@@ -19,4 +19,10 @@ class OrganizersController < ApplicationController
 
   def create
   end
+
+private
+  def organizer_params
+    params.require(:organizer).permit(:username)
+  end
+
 end

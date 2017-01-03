@@ -19,4 +19,10 @@ class SubmissionsController < ApplicationController
 
   def create
   end
+
+private
+  def submission_params
+    params.require(:submission).permit(:directive_id, :team_id, :photo, :caption, :status)
+  end
+
 end

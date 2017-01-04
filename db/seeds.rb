@@ -41,3 +41,9 @@ Hunt.create([
     passcode: 'MulliganMathematicians'
   }
   ])
+
+  Organizer.create([
+    {
+      username: 'Ada Lovelace',
+    }
+  ])

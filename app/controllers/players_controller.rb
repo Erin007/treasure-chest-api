@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   def index
     render json: {
       count: Player.count,
-      organizers: Player.all.as_json(only: [:id, :username])
+      players: Player.all.as_json(only: [:id, :username])
     }
   end
 

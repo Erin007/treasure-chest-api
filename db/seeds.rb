@@ -47,3 +47,13 @@ Hunt.create([
       username: 'Ada Lovelace',
     }
   ])
+
+
+  Player.create([
+    {
+      username: 'Erin',
+    },
+    {
+      username: 'Morty',
+    }
+  ])

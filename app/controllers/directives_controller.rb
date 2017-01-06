@@ -3,7 +3,7 @@ class DirectivesController < ApplicationController
   def index
     #is it better to only show the directives for a specific hunt?
     render json: {
-       Directive.all.as_json(only: [:id, :description, :complete?, :point_value, :name, :hunt_id])
+       directives: Directive.all.as_json(only: [:id, :description, :complete?, :point_value, :name, :hunt_id])
     }
   end
 

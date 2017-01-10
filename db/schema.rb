@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103223955) do
+ActiveRecord::Schema.define(version: 20170110210023) do
 
   create_table "directives", force: :cascade do |t|
     t.string   "name"
@@ -35,12 +35,14 @@ ActiveRecord::Schema.define(version: 20170103223955) do
     t.string   "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "firebase"
   end
 
   create_table "players", force: :cascade do |t|
     t.string   "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "firebase"
   end
 
   create_table "submissions", force: :cascade do |t|

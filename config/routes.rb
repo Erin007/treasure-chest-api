@@ -1,9 +1,26 @@
 Rails.application.routes.draw do
   root to: 'directives#index', as: '/'
 
+#routes for hunts and directives belonging to hunts
+  #routes for submissions belonging to directives
   resources :hunts do
-    resources :directives
+    resources :directives do
+      resources :submissions
+    end
   end
+
+#routes for organizers and the hunts that belong to them
+  resources :organizers do
+    resources :hunts
+  end
+
+  #routes for hunts, teams and players
+  resources :hunts do
+    resources :teams do
+      resources :players
+    end 
+  end
+
 
 
   # get 'submissions/index'

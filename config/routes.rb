@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: 'directives#index', as: '/'
 
-  resources :hunts
+  resources :hunts do
+    resources :directives
+  end
+
 
   # get 'submissions/index'
   #

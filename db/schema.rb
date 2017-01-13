@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110210023) do
+ActiveRecord::Schema.define(version: 20170113190753) do
 
   create_table "directives", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.boolean  "complete?"
     t.integer  "point_value"
     t.integer  "hunt_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "complete"
   end
 
   create_table "hunts", force: :cascade do |t|

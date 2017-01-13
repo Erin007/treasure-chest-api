@@ -3,7 +3,7 @@ class DirectivesController < ApplicationController
   def index
     #is it better to only show the directives for a specific hunt?
     render json: {
-       directives: Directive.all.as_json(only: [:id, :description, :complete?, :point_value, :name, :hunt_id])
+       directives: Directive.all.as_json(only: [:id, :description, :complete, :point_value, :name, :hunt_id])
     }
   end
 
@@ -12,7 +12,7 @@ class DirectivesController < ApplicationController
 
   def show
     begin
-      render json: directive.as_json(only: [:id, :description, :complete?, :point_value, :name, :hunt_id])
+      render json: directive.as_json(only: [:id, :description, :complete, :point_value, :name, :hunt_id])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -64,7 +64,7 @@ private
   end
 
   def directive_params
-    params.require(:directive).permit(:decription, :complete?, :point_value, :name, :hunt_id)
+    params.require(:directive).permit(:decription, :complete, :point_value, :name, :hunt_id)
   end
 
 end

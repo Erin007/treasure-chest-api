@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   resources :hunts do
     resources :teams do
       resources :players
-    end 
+    end
   end
+
+  #routes for players and their submissions
+  resources :players do
+    resources :submissions
+  end 
 
 
 

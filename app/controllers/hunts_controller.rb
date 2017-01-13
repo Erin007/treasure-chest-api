@@ -1,4 +1,7 @@
 class HuntsController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: {
       count: Hunt.count,
@@ -48,7 +51,7 @@ class HuntsController < ApplicationController
   def create
     hunt = Hunt.new(hunt_params)
     if hunt.save
-      render status: :created, json: {id: hunt.id}
+      render status: :created, json: {id: hunt.id, name: hunt.name, passcode: hunt.passcode, description: hunt.description, organizer_id: hunt.organizer_id}
     else
       render status: :bad_request, json: {
         errors: hunt.errors.messages
@@ -62,7 +65,10 @@ private
   end
 
   def hunt_params
-    params.require(:hunt).permit(:decription, :passcode, :name, :organizer_id)
+    params.permit(:description, :passcode, :name, :organizer_id)
   end
+
+protected
+
 
 end

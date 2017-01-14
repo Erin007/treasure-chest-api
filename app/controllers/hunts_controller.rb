@@ -49,14 +49,21 @@ class HuntsController < ApplicationController
   # end
 
   def create
-    hunt = Hunt.new(hunt_params)
-    if hunt.save
-      render status: :created, json: {id: hunt.id, name: hunt.name, passcode: hunt.passcode, description: hunt.description, organizer_id: hunt.organizer_id}
+    puts "We're in the create method!"
+    hunt2 = Hunt.new(hunt_params)
+    
+    if hunt2.save
+      puts hunt2.inspect
+      puts hunt2.errors.messages
+
+      render status: :created, json: {id: hunt2.id, name: hunt2.name, passcode: hunt2.passcode, description: hunt2.description, organizer_id: hunt2.organizer_id}
     else
       render status: :bad_request, json: {
-        errors: hunt.errors.messages
+        errors: hunt2.errors.messages
       }
     end
+
+
   end
 
 private

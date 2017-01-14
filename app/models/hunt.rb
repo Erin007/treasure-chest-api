@@ -4,6 +4,6 @@ class Hunt < ApplicationRecord
 
   validates :name, presence: true
   validates :organizer_id, presence: true
-  validates :passcode, uniqueness: true
+  validates :passcode, presence: true
   validates :passcode, length: { minimum: 5 }
 end

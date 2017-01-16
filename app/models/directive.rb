@@ -5,5 +5,5 @@ class Directive < ApplicationRecord
   validates :complete, presence: true
   validates :hunt_id, presence: true
   validates :name, presence: true
-  validates :point_value, numericality: true
+  #validates :point_value, numericality: true
 end

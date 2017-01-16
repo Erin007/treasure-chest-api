@@ -47,12 +47,12 @@ class DirectivesController < ApplicationController
   # end
 
   def create
-    directive = Directive.new(directive_params)
-    if directive.save
-      render status: :created, json: {id: directive.id}
+    directive2 = Directive.new(directive_params)
+    if directive2.save
+      render status: :created, json: {id: directive2.id}
     else
       render status: :bad_request, json: {
-        errors: directive.errors.messages
+        errors: directive2.errors.messages
       }
     end
   end

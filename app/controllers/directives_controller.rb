@@ -54,7 +54,7 @@ class DirectivesController < ApplicationController
       puts directive2.inspect
       puts directive2.errors.messages
 
-      render status: :created, json: {id: directive2.id}
+      render status: :created, json: {id: directive2.id, name: directive2.name, complete: directive2.complete, description: directive2.description, point_value: directive2.point_value, hunt_id: directive2.hunt_id}
     else
       render status: :bad_request, json: {
         errors: directive2.errors.messages

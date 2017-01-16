@@ -1,4 +1,7 @@
 class SubmissionsController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: {
       count: Submission.count,
@@ -62,7 +65,7 @@ private
   end
 
   def submission_params
-    params.require(:submission).permit(:directive_id, :team_id, :photo, :caption, :status)
+    params.permit(:directive_id, :team_id, :photo, :caption, :status)
   end
 
 end

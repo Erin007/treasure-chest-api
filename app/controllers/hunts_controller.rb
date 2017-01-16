@@ -13,6 +13,8 @@ class HuntsController < ApplicationController
   # end
 
   def show
+    puts "We're in the show method"
+    hunt = Hunt.find(params[:id].to_i)
     begin
       render json: hunt.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
     rescue ActiveRecord::RecordNotFound
@@ -51,7 +53,7 @@ class HuntsController < ApplicationController
   def create
     puts "We're in the create method!"
     hunt2 = Hunt.new(hunt_params)
-    
+
     if hunt2.save
       puts hunt2.inspect
       puts hunt2.errors.messages
@@ -67,9 +69,9 @@ class HuntsController < ApplicationController
   end
 
 private
-  def hunt
-   @hunt ||= Hunt.find(params[:id].to_i)
-  end
+  # def hunt
+  #  @hunt ||= Hunt.find(params[:id].to_i)
+  # end
 
   def hunt_params
     params.permit(:description, :passcode, :name, :organizer_id)

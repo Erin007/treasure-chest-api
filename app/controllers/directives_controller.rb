@@ -64,7 +64,7 @@ private
   end
 
   def directive_params
-    params.permit(:decription, :complete, :point_value, :name, :hunt_id)
+    params.permit(:description, :complete, :point_value, :name, :hunt_id)
   end
 
 end

@@ -1,5 +1,7 @@
 class DirectivesController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def index
     #is it better to only show the directives for a specific hunt?
     render json: {
@@ -49,6 +51,9 @@ class DirectivesController < ApplicationController
   def create
     directive2 = Directive.new(directive_params)
     if directive2.save
+      puts directive2.inspect
+      puts directive2.errors.messages
+
       render status: :created, json: {id: directive2.id}
     else
       render status: :bad_request, json: {

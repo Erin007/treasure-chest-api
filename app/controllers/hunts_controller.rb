@@ -47,6 +47,8 @@ class HuntsController < ApplicationController
     end
   end
 
+  #def find_by_name
+
   # def edit
   # end
 

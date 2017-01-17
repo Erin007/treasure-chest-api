@@ -1,5 +1,5 @@
 class Directive < ApplicationRecord
-  belongs_to :hunt
+  #belongs_to :hunt
   has_many :submissions
 
   validates :complete, presence: true

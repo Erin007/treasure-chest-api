@@ -1,7 +1,9 @@
 class DirectivesController < ApplicationController
 
   #skip_before_action :verify_authenticity_token
-  skip_before_action :verify_authenticity_token, if: :json_request?
+  #skip_before_action :verify_authenticity_token, if: :json_request?
+
+  protect_from_forgery except: :create
 
   def index
     #is it better to only show the directives for a specific hunt?

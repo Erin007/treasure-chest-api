@@ -75,7 +75,8 @@ private
 
 protected
 
-  def json_request? request.format.json?
+  def json_request?
+    return request.format.json?
   end
 
 end

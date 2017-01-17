@@ -1,6 +1,6 @@
 class Hunt < ApplicationRecord
-  belongs_to  :organizer
-  has_many :directives
+  #belongs_to  :organizer
+  #has_many :directives
 
   validates :name, presence: true
   validates :organizer_id, presence: true

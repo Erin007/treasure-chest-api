@@ -1,6 +1,7 @@
 class DirectivesController < ApplicationController
 
   #skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, if: :json_request?
 
   def index
     #is it better to only show the directives for a specific hunt?
@@ -70,6 +71,11 @@ private
 
   def directive_params
     params.permit(:description, :complete, :point_value, :name, :hunt_id)
+  end
+
+protected
+
+  def json_request? request.format.json?
   end
 
 end

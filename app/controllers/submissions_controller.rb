@@ -51,7 +51,7 @@ class SubmissionsController < ApplicationController
   def create
     submission = Submission.new(submission_params)
     if submission.save
-      render status: :created, json: {id: submission.id}
+      render status: :created, json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status }
     else
       render status: :bad_request, json: {
         errors: submission.errors.messages

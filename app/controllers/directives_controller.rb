@@ -65,9 +65,9 @@ class DirectivesController < ApplicationController
 
 private
 
-  def directive
-   @directive ||= Directive.find(params[:id].to_i)
-  end
+  # def directive
+  #  @directive ||= Directive.find(params[:id].to_i)
+  # end
 
   def directive_params
     params.permit(:description, :complete, :point_value, :name, :hunt_id)

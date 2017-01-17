@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: {
       count: Team.count,
@@ -48,7 +50,7 @@ class TeamsController < ApplicationController
   def create
     team = Team.new(team_params)
     if team.save
-      render status: :created, json: {id: team.id}
+      render status: :created, json: {id: team.id, name: team.name, points: team.points, hunt_id: team.hunt_id}
     else
       render status: :bad_request, json: {
         errors: team.errors.messages
@@ -62,7 +64,7 @@ private
   end
 
   def team_params
-    params.require(:team).permit(:name, :points)
+    params.permit(:name, :points)
   end
 
 end

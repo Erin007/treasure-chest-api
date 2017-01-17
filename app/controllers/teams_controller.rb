@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   def index
     render json: {
       count: Team.count,
-      directives: Team.all.as_json(only: [:id, :name, :points])
+      teams: Team.all.as_json(only: [:id, :name, :points])
     }
   end
 

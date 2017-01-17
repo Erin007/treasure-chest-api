@@ -4,5 +4,5 @@ class Team < ApplicationRecord
 
  validates :name, presence: true
  validates :points, numericality: true
- #validates :hunt_id, presence: true
+ validates :hunt_id, presence: true
 end

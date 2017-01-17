@@ -64,7 +64,7 @@ private
   end
 
   def team_params
-    params.permit(:name, :points)
+    params.permit(:name, :points, :hunt_id)
   end
 
 end

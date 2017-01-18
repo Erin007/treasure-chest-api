@@ -493,6 +493,6 @@ User.create([
 {
   username: "ErinB007",
   email: "erin.e.bond@gmail.com",
-  firebase: ''
+  firebase: 'E5A6zXLyluTJOKQ7xb4XRijydou1'
 }
 ])

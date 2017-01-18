@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/new'
+
+  get 'users/show'
+
+  get 'users/create'
+
+  get 'users/destroy'
+
+  get 'users/update'
+
+  get 'users/edit'
+
   root to: 'directives#index', as: '/'
 
   resources :hunts, :directives, :submissions, :players, :organizers, :teams

@@ -13,7 +13,6 @@ class HuntsController < ApplicationController
   # end
 
   def find
-    puts "We're in the show method"
     hunt = Hunt.where(name: params[:name])
     begin
       render json: hunt.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
@@ -23,7 +22,6 @@ class HuntsController < ApplicationController
   end
 
   def show
-    puts "We're in the show method"
     hunt = Hunt.find(params[:id])
     begin
       render json: hunt.as_json(only: [:id, :name, :description, :organizer_id, :passcode])

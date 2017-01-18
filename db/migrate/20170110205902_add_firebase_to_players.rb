@@ -1,5 +1,0 @@
-class AddFirebaseToPlayers < ActiveRecord::Migration[5.0]
-  def change
-    add_column :players, :firebase, :string
-  end
-end

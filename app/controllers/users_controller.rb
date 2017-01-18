@@ -20,9 +20,9 @@ class UsersController < ApplicationController
   end
 
   def find
-    user = User.where(email: params[:email])
+    users = User.where(email: params[:email])
     begin
-      render json: user.as_json(only: [:id, :username, :email])
+      render json: users.as_json(only: [:id, :username, :email])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

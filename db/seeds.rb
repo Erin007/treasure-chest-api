@@ -487,10 +487,12 @@ Team.create([
 User.create([
 {
   username: "HuntExpert1",
-  email: "test@email.com"
+  email: "test@email.com",
+  firebase: "n9QMhNDcYhQrH7fwPIyi3L1ChX12"
 },
 {
   username: "ErinB007",
-  email: "erin.e.bond@gmail.com"
+  email: "erin.e.bond@gmail.com",
+  firebase: ''
 }
 ])

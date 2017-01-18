@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def find
-    users = User.where(email: params[:email])
+    users = User.where(firebase: params[:firebase].to_s)
     begin
       render json: users.as_json(only: [:id, :username, :email])
     rescue ActiveRecord::RecordNotFound

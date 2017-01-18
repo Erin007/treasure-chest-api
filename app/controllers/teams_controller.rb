@@ -4,16 +4,25 @@ class TeamsController < ApplicationController
   def index
     render json: {
       count: Team.count,
-      teams: Team.all.as_json(only: [:id, :name, :points])
+      teams: Team.all.as_json(only: [:id, :name, :points, :hunt_id])
     }
   end
 
   # def new
   # end
 
+  def find
+    teams = Team.where(hunt_id: params[:hunt_id])
+    begin
+      render json: teams.as_json(only: [:id, :name, :points, :hunt_id])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def show
     begin
-      render json: team.as_json(only: [:id, :name, :points])
+      render json: team.as_json(only: [:id, :name, :points, :hunt_id])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

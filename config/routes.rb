@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   get '/directives/find/:hunt_id', to: 'directives#find'
 
+  get '/teams/find/:hunt_id', to: 'teams#find'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   resources :hunts, :directives, :submissions, :players, :organizers, :teams
 
-
-
+  get '/hunts/find/:name', to: 'hunts#find'
 
 #routes for hunts and directives belonging to hunts
   #routes for submissions belonging to directives

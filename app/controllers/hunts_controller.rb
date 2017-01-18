@@ -12,9 +12,19 @@ class HuntsController < ApplicationController
   # def new
   # end
 
+  def find
+    puts "We're in the show method"
+    hunt = Hunt.where(name: params[:name])
+    begin
+      render json: hunt.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def show
     puts "We're in the show method"
-    hunt = Hunt.find(params[:id].to_i)
+    hunt = Hunt.find(params[:id])
     begin
       render json: hunt.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
     rescue ActiveRecord::RecordNotFound

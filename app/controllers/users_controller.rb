@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   def index
     render json: {
       count: User.count,
-      teams: User.all.as_json(only: [:id, :username, :email])
+      teams: User.all.as_json(only: [:id, :username, :email, :firebase])
     }
   end
 
   def show
     begin
-      render json: user.as_json(only: [:id, :username, :email])
+      render json: user.as_json(only: [:id, :username, :email, :firebase])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def find
     users = User.where(firebase: params[:firebase].to_s)
     begin
-      render json: users.as_json(only: [:id, :username, :email])
+      render json: users.as_json(only: [:id, :username, :email, :firebase])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render status: :created, json: {id: user.id, username: team.username, email: user.email }
+      render status: :created, json: {id: user.id, username: team.username, email: user.email, firebase: user.firebase }
     else
       render status: :bad_request, json: {
         errors: user.errors.messages
@@ -69,7 +69,7 @@ private
   end
 
   def user_params
-    params.permit(:username, :email)
+    params.permit(:username, :email, :firebase)
   end
 
 end

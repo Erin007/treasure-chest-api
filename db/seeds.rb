@@ -36,7 +36,7 @@ Directive.create([
     hunt_id: 1
   },
   {
-    name: 'The campiest moive you can find at the Central Library',
+    name: 'The campiest movie you can find at the Central Library',
     description: '',
     complete: "false",
     point_value: 1,
@@ -181,7 +181,7 @@ Directive.create([
     hunt_id: 1
   },
   {
-    name: 'A segway of hoverboard',
+    name: 'A segway or hoverboard',
     description: '',
     complete: "false",
     point_value: 1,
@@ -223,7 +223,7 @@ Directive.create([
     hunt_id: 1
   },
   {
-    name: 'Air-born fist at Pike Place Market',
+    name: 'Air-born fish at Pike Place Market',
     description: '',
     complete: "false",
     point_value: 1,
@@ -443,31 +443,54 @@ Directive.create([
 
 Hunt.create([
   {
-    name: 'Ada First Week Team Building',
+    name: 'Ada: Explore Seattle',
     description: 'Explore Seattle and bond with your new classmates at Ada Developers Academy. Each photo must feature at least one member of your team. You may not submit that same photo for multiple directives.',
     organizer_id: 1,
-    passcode: 'AdaLovelaceCodesIt'
+    passcode: 'AdaLovelace'
   },
   {
-    name: 'Mr. Mulligan Fibonacci Finders',
+    name: 'Fibonacci Finders',
     description: 'How many examples of the Fibonacci series can you find and submit to discuss in class?',
     organizer_id: 2,
-    passcode: 'MulliganMathematicians'
+    passcode: 'I<3Math'
   }
-  ])
+])
 
-  Organizer.create([
-    {
-      username: 'Ada Lovelace',
-    }
-  ])
+Team.create([
+  {
+    name: "Green Team",
+    points: 0,
+    hunt_id: 1
+  },
+  {
+    name: "Blue Team",
+    points: 0,
+    hunt_id: 1
+  },
+  {
+    name: "Yellow Team",
+    points: 0,
+    hunt_id: 1
+  },
+  {
+    name: "Red Team",
+    points: 0,
+    hunt_id: 1
+  },
+  {
+    name: "Orange Team",
+    points: 0,
+    hunt_id: 1
+  },
+])
 
-
-  Player.create([
-    {
-      username: 'Erin',
-    },
-    {
-      username: 'Morty',
-    }
-  ])
+User.create([
+{
+  username: "HuntExpert1",
+  email: "test@email.com"
+},
+{
+  username: "ErinB007",
+  email: "erin.e.bond@gmail.com"
+}
+])

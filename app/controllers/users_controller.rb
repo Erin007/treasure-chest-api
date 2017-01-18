@@ -19,6 +19,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def find
+    user = User.where(email: params[:email])
+    begin
+      render json: user.as_json(only: [:id, :username, :email])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def create
     user = User.new(user_params)
     if user.save

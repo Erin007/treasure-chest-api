@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/hunts/find/:name', to: 'hunts#find'
 
-  get '/user/find/:firesbase', to: 'users#find'
+  get '/user/find/:firebase', to: 'users#find'
 
   get '/directives/find/:hunt_id', to: 'directives#find'
 

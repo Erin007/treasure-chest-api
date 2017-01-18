@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'team_players/index'
+
+  get 'team_players/show'
+
+  get 'team_players/update'
+
+  get 'team_players/edit'
+
+  get 'team_players/new'
+
+  get 'team_players/delete'
+
+  get 'team_players/create'
+
   root to: 'directives#index', as: '/'
 
   resources :hunts, :directives, :submissions, :users, :teams

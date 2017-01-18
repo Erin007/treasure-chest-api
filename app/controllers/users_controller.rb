@@ -8,9 +8,6 @@ class UsersController < ApplicationController
     }
   end
 
-  # def new
-  # end
-
   def show
     begin
       render json: user.as_json(only: [:id, :username, :email])

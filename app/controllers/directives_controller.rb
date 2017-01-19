@@ -15,8 +15,8 @@ class DirectivesController < ApplicationController
   def find
     directives = Directive.where(hunt_id: params[:hunt_id])
     begin
-      render json: {
-        directives: directives.as_json(only: [:id, :name, :description, :complete, :point_value, :hunt_id])}
+      render json:
+         directives.as_json(only: [:id, :name, :description, :complete, :point_value, :hunt_id])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render status: :created, json: {id: user.id, username: team.username, email: user.email, firebase: user.firebase }
+      render status: :created, json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase }
     else
       render status: :bad_request, json: {
         errors: user.errors.messages

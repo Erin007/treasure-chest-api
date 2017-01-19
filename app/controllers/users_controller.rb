@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       user.assign_attributes(user_params)
 
       if user.save
-        render status: :no_content, content: false
+        render json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase }
       else
         render status: :bad_request, json: {
           errors: user.errors.messages

@@ -799,27 +799,27 @@ Hunt.create([
 
 Team.create([
   {
-    name: "Team Awesome",
+    name: "Seat Squad 1",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Best Team Ever",
+    name: "Seat Squad 2",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "We Are the Greatest",
+    name: "Seat Squad 3",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Champions",
+    name: "Seat Squad 4",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Team Humble",
+    name: "Seat Squad 5",
     points: 0,
     hunt_id: 1
   },
@@ -913,116 +913,211 @@ User.create([
 {
   username: "Erin",
   email: "erin@email.com",
-  firebase: ''
+  firebase: 'zOX4358X5zfvamoR5VgEHJPKGfE3'
 },
 {
   username: "Leah",
   email: "leah@email.com",
-  firebase: ''
+  firebase: 'feItwiKdXRSmDbObRQbT53SSwW13'
 },
 {
   username: "Sassa",
   email: "sassa@email.com",
-  firebase: ''
+  firebase: '2zYq60pwaKUsWs5WnrWVamuiXmI2'
 },
 {
   username: "Jessica",
   email: "jessica@email.com",
-  firebase: ''
+  firebase: 'dSSPftFDgFNoGEadJM1pls1fI9A2'
 },
 {
   username: "Briana",
   email: "briana@email.com",
-  firebase: ''
+  firebase: 'sICJ7K8vXBOdafOjEaxEbqXdfrx1'
 },
 {
   username: "Carmen",
   email: "carmen@email.com",
-  firebase: ''
+  firebase: 'Uu1NtYUaDBTVHLCgbQp3PFvYgFy1'
 },
 {
   username: "Elle",
   email: "elle@email.com",
-  firebase: ''
+  firebase: 'HGSeoaYrSyVrSVMjtEsLoy4pnZj2'
 },
 {
   username: "Emily",
   email: "emily@email.com",
-  firebase: ''
+  firebase: 'D824bV8O0OgkzgKQYuV3KD9CE6x2'
 },
 {
   username: "Quai",
   email: "quai@email.com",
-  firebase: ''
+  firebase: 'Sj4TZSp2sPfF0rWFPxeAOar797G2'
 },
 {
   username: "Rachel",
   email: "rachel@email.com",
-  firebase: ''
+  firebase: 'wRAZGlBWs5ZBSvLEoUadcUtbElG2'
 },
 {
   username: "Trish",
   email: "trish@email.com",
-  firebase: ''
+  firebase: 'Y25IkUdQcvgR5gLKU5psgeEl3d63'
 },
 {
   username: "Yael",
   email: "yael@email.com",
-  firebase: ''
+  firebase: 'kFeOfhjHroMXr8yGy68jxV05GMv1'
 },
 {
   username: "Miriam",
   email: "erin@email.com",
-  firebase: ''
+  firebase: 'eZAkpooEw2chJ3ru0697Irs4pVP2'
 },
 {
   username: "Sabrina",
   email: "sabrina@email.com",
-  firebase: ''
+  firebase: 'QrqxYdjKGUbOcC3Oe6SLzBG47Px1'
 },
 {
   username: "Nina",
   email: "nina@email.com",
-  firebase: ''
+  firebase: '1ERTrNEkP4We8A4zs3bKkz2r32i2'
 },
 {
   username: "Brandi",
   email: "brandi@email.com",
-  firebase: ''
+  firebase: 'PUOqZnHPC9TdK2QuFM9n6F1hqh22'
 },
 {
   username: "Joanna",
   email: "joanna@email.com",
-  firebase: ''
+  firebase: 'UOZW41OYgBZj0yZdBByIQ1KU7Ln2'
 },
 {
   username: "Alyssa",
   email: "alyssa@email.com",
-  firebase: ''
+  firebase: 'pxtdkzufJldnsyETF45FShA6UFU2'
 },
 {
   username: "Melissa",
   email: "melissa@email.com",
-  firebase: ''
+  firebase: 'RMCBmurYRsRrHAEAssVXmmVcFgj1'
 },
 {
   username: "Lauren",
   email: "lauren@email.com",
-  firebase: ''
+  firebase: 'RDmZzcaU4TPj1PgpgnTRMEqHC7n2'
 },
 {
   username: "Maya",
   email: "maya@email.com",
-  firebase: ''
+  firebase: 'gL4lYvOKQVRXO4eO04vSsCFsRoB3'
 },
 {
   username: "Olivia",
   email: "olivia@email.com",
-  firebase: ''
+  firebase: '4qQbF00XeLPFAuBmFvStIUcNgMx2'
 },
 {
   username: "Jeannie",
   email: "jeannie@email.com",
-  firebase: ''
+  firebase: '9eekwSox26R8t4JDui867ibDMSB2'
+},
+])
+
+TeamPlayer.create([
+{
+  player_id: 3,
+  team_id: 1
+},
+{
+  player_id: 4,
+  team_id: 1
+},
+{
+  player_id: 5,
+  team_id: 1
+},
+{
+  player_id: 6,
+  team_id: 1
+},
+{
+  player_id: 7,
+  team_id: 2
+},
+{
+  player_id: 8,
+  team_id: 2
+},
+{
+  player_id: 9,
+  team_id: 2
+},
+{
+  player_id: 10,
+  team_id: 2
+},
+{
+  player_id: 11,
+  team_id: 3
+},
+{
+  player_id: 12,
+  team_id: 3
+},
+{
+  player_id: 13,
+  team_id: 3
+},
+{
+  player_id: 14,
+  team_id: 3
+},
+{
+  player_id: 15,
+  team_id: 3
+},
+{
+  player_id: 16,
+  team_id: 4
+},
+{
+  player_id: 17,
+  team_id: 4
+},
+{
+  player_id: 18,
+  team_id: 4
+},
+{
+  player_id: 19,
+  team_id: 4
+},
+{
+  player_id: 20,
+  team_id: 4
+},
+{
+  player_id: 21,
+  team_id: 5
+},
+{
+  player_id: 22,
+  team_id: 5
+},
+{
+  player_id: 23,
+  team_id: 5
+},
+{
+  player_id: 24,
+  team_id: 5
+},
+{
+  player_id: 25,
+  team_id: 5
 },
 ])

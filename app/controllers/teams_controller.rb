@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+
   skip_before_action :verify_authenticity_token
 
   def index
@@ -49,9 +50,6 @@ class TeamsController < ApplicationController
       render status: :not_found, content: false
     end
   end
-
-  # def edit
-  # end
 
   def create
     team = Team.new(team_params)

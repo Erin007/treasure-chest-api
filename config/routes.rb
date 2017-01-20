@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'directives#index', as: '/'
 
-  resources :hunts, :directives, :submissions, :users, :teams, :team_players
+  resources :hunts, :directives, :submissions, :users, :teams, :teamplayers
 
   get '/hunts/find/:name', to: 'hunts#find'
 

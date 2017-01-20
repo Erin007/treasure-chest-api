@@ -35,7 +35,7 @@ class HuntsController < ApplicationController
       hunt.assign_attributes(hunt_params)
 
       if hunt.save
-        render status: :no_content, content: false
+        render json: {id: hunt.id, name: hunt.name, organizer_id: hunt.organizer_id, passcode: hunt.passcode, description: hunt.description}
       else
         render status: :bad_request, json: {
           errors: hunt.errors.messages

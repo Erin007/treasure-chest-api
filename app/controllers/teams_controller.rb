@@ -8,9 +8,6 @@ class TeamsController < ApplicationController
     }
   end
 
-  # def new
-  # end
-
   def find
     teams = Team.where(hunt_id: params[:hunt_id])
     begin
@@ -33,7 +30,7 @@ class TeamsController < ApplicationController
       team.assign_attributes(team_params)
 
       if team.save
-        render status: :no_content, content: false
+        render json: {id: team.id, name: team.name, points: team.points, hunt_id: team.hunt_id}
       else
         render status: :bad_request, json: {
           errors: team.errors.messages

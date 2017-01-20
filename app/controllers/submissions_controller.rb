@@ -9,9 +9,6 @@ class SubmissionsController < ApplicationController
     }
   end
 
-  # def new
-  # end
-
   def show
     begin
       render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
@@ -25,7 +22,7 @@ class SubmissionsController < ApplicationController
       submission.assign_attributes(submission_params)
 
       if submission.save
-        render status: :no_content, content: false
+        render json: {id: submission.id, directive_id: submission.directive_id, team_id: directive.team_id, photo: directive.photo, caption: directive.caption, status: directive.status}
       else
         render status: :bad_request, json: {
           errors: submission.errors.messages

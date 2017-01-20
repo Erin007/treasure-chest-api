@@ -37,7 +37,8 @@ class DirectivesController < ApplicationController
       directive.assign_attributes(directive_params)
 
       if directive.save
-        render status: :no_content, content: false
+        render json: {id: directive.id, description: directive.description, complete:  directive.complete, point_value: directive.point_value, name: directive.name,
+        hunt_id: directive.hunt_id}
       else
         render status: :bad_request, json: {
           errors: directive.errors.messages

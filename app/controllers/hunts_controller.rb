@@ -27,6 +27,33 @@ class HuntsController < ApplicationController
     end
   end
 
+  def find_by_player
+    # find the teamplayers that the player is part of
+    teamplayers = TeamPlayer.where(player_id: params[:player_id])
+    # use the teamplayers to find the teams that the player is part of
+    team_ids = []
+
+    teamplayers.each do |teamplayer|
+      team_ids << teamplayer.team_id
+    end
+
+    teams = Team.where(id: team_ids)
+
+    #use the hunt_id of the teams to the find the hunts the player is part of
+    hunt_ids = []
+
+    teams.each do |team|
+      hunt_ids << team.id
+    end
+
+    hunts = Hunt.where(id: hunt_ids)
+    begin
+      render json: hunts.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def show
     hunt = Hunt.find(params[:id])
     begin

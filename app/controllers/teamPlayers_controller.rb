@@ -1,11 +1,11 @@
-class TeamPlayersController < ApplicationController
+class TeamplayersController < ApplicationController
 
     skip_before_action :verify_authenticity_token
 
   def index
     render json: {
       count: TeamPlayer.count,
-      teams: TeamPlayer.all.as_json(only: [:id, :player_id, :team_id])
+      teamplayers: TeamPlayer.all.as_json(only: [:id, :player_id, :team_id])
     }
   end
 

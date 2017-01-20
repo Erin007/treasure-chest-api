@@ -907,7 +907,7 @@ User.create([
   firebase: "lILMnOgIGJgvuWIFvGimcd0cm2m2"
 },
 { username: "Ms.Miller_English8",
-  email: "teacher@email.com"
+  email: "teacher@email.com",
   firebase: "Fo9APD8g6DdlCcPtjpjvSXdCIIz1"
 },
 {

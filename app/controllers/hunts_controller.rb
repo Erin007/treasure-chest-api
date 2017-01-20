@@ -9,11 +9,17 @@ class HuntsController < ApplicationController
     }
   end
 
-  # def new
-  # end
-
-  def find
+  def find_by_name
     hunts = Hunt.where(name: params[:name])
+    begin
+      render json: hunts.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
+  def find_by_organizer
+    hunts = Hunt.where(organizer_id: params[:organizer_id])
     begin
       render json: hunts.as_json(only: [:id, :name, :description, :organizer_id, :passcode])
     rescue ActiveRecord::RecordNotFound

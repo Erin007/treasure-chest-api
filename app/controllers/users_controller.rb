@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def find
+  def find_by_firebase
     users = User.where(firebase: params[:firebase].to_s)
     begin
       render json: users.as_json(only: [:id, :username, :email, :firebase])

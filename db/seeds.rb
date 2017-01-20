@@ -439,6 +439,335 @@ Directive.create([
     point_value: 1,
     hunt_id: 1
   },
+  {
+    name: 'pungent',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'opulent',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'languid',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'solemn',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'grotesque',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'prodigality',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'veranda',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'corrugated',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'nebulous',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'disdain',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'disheveled',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'turgid',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'lethargic',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 2
+  },
+  {
+    name: 'horoscope',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'telescope',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'microscope',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'stethoscope',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'periscope',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'spectator',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'spectacles',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'spectacular',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'spectrum',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'inscription',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'manuscript',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'scribble',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'subscription',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'indescribable',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'structure',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'destruction',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'instructions',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'infrastructure',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'instructor',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'obstruction',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'unstructured',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 3
+  },
+  {
+    name: 'getting cold feet',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'woke up on the wrong side of the bed',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'cool as a cucumber',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'costs an arm and a leg',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'burning the midnight oil',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'cut corners',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'under the weather',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'jump on the bandwagon',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'a piece of cake',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'dime a dozen',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'all thumbs',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'once in a blue moon',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
+  {
+    name: 'a blessing in disguise',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 4
+  },
 ])
 
 Hunt.create([
@@ -449,50 +778,251 @@ Hunt.create([
     passcode: 'AdaLovelace'
   },
   {
-    name: 'Fibonacci Finders',
-    description: 'How many examples of the Fibonacci series can you find and submit to discuss in class?',
+    name: 'Gatsby Vocabulary',
+    description: 'Vocabulary from Great Gatsby, unit 3. Submit a photo that exemplifies the word. The caption should use the vocabulary word correctly in a sentence. Each photo must have 2 group members.',
     organizer_id: 2,
-    passcode: 'I<3Math'
-  }
+    passcode: 'Fitzgerald'
+  },
+  {
+    name: 'Latin Root Study - S',
+    description: 'Vocabulary words that have Latin Roots that start with S. Submit a photo that exemplifies the word. The caption should use the vocabulary word correctly in a sentence.',
+    organizer_id: 2,
+    passcode: 'LatinS'
+  },
+  {
+    name: 'English Idioms - Set 1',
+    description: 'Take a photo that demonstrates the figurative meaning of each idiom from set 1. The caption should use the idiom correctly in a sentence.',
+    organizer_id: 2,
+    passcode: 'idiom1'
+  },
 ])
 
 Team.create([
   {
-    name: "Green Team",
+    name: "Team Awesome",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Blue Team",
+    name: "Best Team Ever",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Yellow Team",
+    name: "We Are the Greatest",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Red Team",
+    name: "Champions",
     points: 0,
     hunt_id: 1
   },
   {
-    name: "Orange Team",
+    name: "Team Humble",
     points: 0,
     hunt_id: 1
+  },
+  {
+    name: "Seat Squad 1",
+    points: 0,
+    hunt_id: 2
+  },
+  {
+    name: "Seat Squad 2",
+    points: 0,
+    hunt_id: 2
+  },
+  {
+    name: "Seat Squad 3",
+    points: 0,
+    hunt_id: 2
+  },
+  {
+    name: "Seat Squad 4",
+    points: 0,
+    hunt_id: 2
+  },
+  {
+    name: "Seat Squad 5",
+    points: 0,
+    hunt_id: 2
+  },
+  {
+    name: "Seat Squad 1",
+    points: 0,
+    hunt_id: 3
+  },
+  {
+    name: "Seat Squad 2",
+    points: 0,
+    hunt_id: 3
+  },
+  {
+    name: "Seat Squad 3",
+    points: 0,
+    hunt_id: 3
+  },
+  {
+    name: "Seat Squad 4",
+    points: 0,
+    hunt_id: 3
+  },
+  {
+    name: "Seat Squad 5",
+    points: 0,
+    hunt_id: 3
+  },
+  {
+    name: "Seat Squad 1",
+    points: 0,
+    hunt_id: 4
+  },
+  {
+    name: "Seat Squad 2",
+    points: 0,
+    hunt_id: 4
+  },
+  {
+    name: "Seat Squad 3",
+    points: 0,
+    hunt_id: 4
+  },
+  {
+    name: "Seat Squad 4",
+    points: 0,
+    hunt_id: 4
+  },
+  {
+    name: "Seat Squad 5",
+    points: 0,
+    hunt_id: 4
   },
 ])
 
 User.create([
 {
-  username: "HuntExpert1",
-  email: "test@email.com",
-  firebase: "n9QMhNDcYhQrH7fwPIyi3L1ChX12"
+  username: "AdaLoveLace",
+  email: "ada@email.com",
+  firebase: "lILMnOgIGJgvuWIFvGimcd0cm2m2"
+},
+{ username: "Ms.Miller_English8",
+  email: "teacher@email.com"
+  firebase: "Fo9APD8g6DdlCcPtjpjvSXdCIIz1"
 },
 {
-  username: "ErinB007",
-  email: "erin.e.bond@gmail.com",
-  firebase: 'E5A6zXLyluTJOKQ7xb4XRijydou1'
-}
+  username: "Erin",
+  email: "erin@email.com",
+  firebase: ''
+},
+{
+  username: "Leah",
+  email: "leah@email.com",
+  firebase: ''
+},
+{
+  username: "Sassa",
+  email: "sassa@email.com",
+  firebase: ''
+},
+{
+  username: "Jessica",
+  email: "jessica@email.com",
+  firebase: ''
+},
+{
+  username: "Briana",
+  email: "briana@email.com",
+  firebase: ''
+},
+{
+  username: "Carmen",
+  email: "carmen@email.com",
+  firebase: ''
+},
+{
+  username: "Elle",
+  email: "elle@email.com",
+  firebase: ''
+},
+{
+  username: "Emily",
+  email: "emily@email.com",
+  firebase: ''
+},
+{
+  username: "Quai",
+  email: "quai@email.com",
+  firebase: ''
+},
+{
+  username: "Rachel",
+  email: "rachel@email.com",
+  firebase: ''
+},
+{
+  username: "Trish",
+  email: "trish@email.com",
+  firebase: ''
+},
+{
+  username: "Yael",
+  email: "yael@email.com",
+  firebase: ''
+},
+{
+  username: "Miriam",
+  email: "erin@email.com",
+  firebase: ''
+},
+{
+  username: "Sabrina",
+  email: "sabrina@email.com",
+  firebase: ''
+},
+{
+  username: "Nina",
+  email: "nina@email.com",
+  firebase: ''
+},
+{
+  username: "Brandi",
+  email: "brandi@email.com",
+  firebase: ''
+},
+{
+  username: "Joanna",
+  email: "joanna@email.com",
+  firebase: ''
+},
+{
+  username: "Alyssa",
+  email: "alyssa@email.com",
+  firebase: ''
+},
+{
+  username: "Melissa",
+  email: "melissa@email.com",
+  firebase: ''
+},
+{
+  username: "Lauren",
+  email: "lauren@email.com",
+  firebase: ''
+},
+{
+  username: "Maya",
+  email: "maya@email.com",
+  firebase: ''
+},
+{
+  username: "Olivia",
+  email: "olivia@email.com",
+  firebase: ''
+},
+{
+  username: "Jeannie",
+  email: "jeannie@email.com",
+  firebase: ''
+},
 ])

@@ -25,6 +25,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def find_by_team
+    # find all of the teamplayers associated with the team
+    teamplayers = TeamPlayer.where(team_id: params[:team_id].to_i)
+
+    #find all of the players associated with those teamplayers
+    player_ids = []
+
+    teamplayers.each do |teamplayer|
+      player_ids << teamplayer.player_id
+    end
+
+    players = User.where(id: player_ids)
+    begin
+      render json: players.as_json(only: [:id, :username, :email, :firebase])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def create
     user = User.new(user_params)
     if user.save

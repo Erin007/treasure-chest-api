@@ -21,8 +21,6 @@ class DirectivesController < ApplicationController
       render status: :not_found, content: false
     end
   end
-  # def new
-  # end
 
   def show
     begin
@@ -58,9 +56,6 @@ class DirectivesController < ApplicationController
     end
   end
 
-  # def edit
-  # end
-
   def create
     directive2 = Directive.new(directive_params)
     if directive2.save
@@ -77,9 +72,9 @@ class DirectivesController < ApplicationController
 
 private
 
-  # def directive
-  #  @directive ||= Directive.find(params[:id].to_i)
-  # end
+  def directive
+   @directive ||= Directive.find(params[:id].to_i)
+  end
 
   def directive_params
     params.permit(:description, :complete, :point_value, :name, :hunt_id)

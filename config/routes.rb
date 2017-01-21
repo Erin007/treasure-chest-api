@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   get '/hunts/find/player/:player_id', to: 'hunts#find_by_player'
 
   # Finder routes for users
-  get '/user/find/firebase/:firebase', to: 'users#find_by_firebase'
+  get '/users/find/firebase/:firebase', to: 'users#find_by_firebase'
 
-  get '/user/find/team/:team_id', to: 'users#find_by_team'
+  get '/users/find/team/:team_id', to: 'users#find_by_team'
 
   # Finder routes for directives
   get '/directives/find/:hunt_id', to: 'directives#find'
@@ -23,5 +23,8 @@ Rails.application.routes.draw do
   get '/teams/find/:hunt_id', to: 'teams#find_by_hunt_id'
 
   get '/teams/find/:hunt_id/:player_id', to: 'teams#find_by_hunt_and_player'
+
+  # Find routes for teamplayers
+  get '/teamplayers/find/:team_id/:player_id', to: 'teamplayers#find'
 
 end

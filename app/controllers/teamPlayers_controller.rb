@@ -17,6 +17,29 @@ class TeamplayersController < ApplicationController
     end
   end
 
+  def find
+    teamplayer = 0
+
+    teamplayers_by_player = TeamPlayer.where(player_id: params[:player_id])
+
+    teamplayers_by_team = TeamPlayer.where(team_id: params[:team_id])
+
+    teamplayers_by_team.each do |tp_by_team|
+      teamplayers_by_player.each do |tp_by_player|
+        if tp_by_player == tp_by_team
+          teamplayer = tp_by_player
+        end
+      end
+    end
+
+    begin
+      render json: teamplayer.as_json(only: [:id, :player_id, :team_id])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+
+  end
+
   def update
     begin
       teamplayer.assign_attributes(teamplayer_params)

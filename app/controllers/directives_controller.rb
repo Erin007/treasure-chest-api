@@ -6,7 +6,6 @@ class DirectivesController < ApplicationController
   protect_from_forgery except: :create
 
   def index
-    #is it better to only show the directives for a specific hunt?
     render json: {
        directives: Directive.all.as_json(only: [:id, :description, :complete, :point_value, :name, :hunt_id])
     }

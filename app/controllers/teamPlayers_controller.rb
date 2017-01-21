@@ -1,6 +1,8 @@
 class TeamplayersController < ApplicationController
 
-    skip_before_action :verify_authenticity_token
+    #skip_before_action :verify_authenticity_token
+
+    protect_from_forgery except: :create
 
   def index
     render json: {
@@ -44,8 +46,8 @@ class TeamplayersController < ApplicationController
     begin
       teamplayer.assign_attributes(teamplayer_params)
 
-      if team.save
-        render json: {id: teamplayer.id, team_id: teamplayer.team_id, player_id: team.player_id}
+      if teamplayer.save
+        render json: {id: teamplayer.id, team_id: teamplayer.team_id, player_id: teamplayer.player_id}
       else
         render status: :bad_request, json: {
           errors: teamplayer.errors.messages
@@ -59,7 +61,6 @@ class TeamplayersController < ApplicationController
   def destroy
     begin
       teamplayer.destroy
-      render status: :no_content, content: false
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

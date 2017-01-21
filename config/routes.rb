@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/directives/find/:hunt_id', to: 'directives#find'
 
   # Finder routes for teams
-  get '/teams/find/:hunt_id', to: 'teams#find'
+  get '/teams/find/:hunt_id', to: 'teams#find_by_hunt_id'
+
+  get '/teams/find/:hunt_id/:player_id', to: 'teams#find_by_hunt_and_player'
 
 end

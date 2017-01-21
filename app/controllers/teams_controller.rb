@@ -9,8 +9,40 @@ class TeamsController < ApplicationController
     }
   end
 
-  def find
+  def find_by_hunt_id
     teams = Team.where(hunt_id: params[:hunt_id])
+    begin
+      render json: teams.as_json(only: [:id, :name, :points, :hunt_id])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
+  def find_by_hunt_and_player
+    #find all of the teams associated with the hunt id
+    teams_by_hunt = Team.where(hunt_id: params[:hunt_id])
+    #find all of the teamplayers with the player_id
+    teamplayers = TeamPlayer.where(player_id: params[:player_id])
+
+    #find all of the teams with the teamplayers
+    team_ids = []
+    teamplayers.each do |teamplayer|
+      team_ids << teamplayer.id
+    end
+
+    teams_by_player = Team.where(id: team_ids)
+    #cross-reference the teams from hunt_id with the teams from player_id via teamplayers and find the match
+    team_id = 0
+    teams_by_hunt.each do |team_by_hunt|
+      teams_by_player.each do |team_by_player|
+        if team_by_hunt.id == team_by_player.id
+          team_id = team_by_hunt.id
+        end
+      end
+    end
+
+    #return the team
+    team = Team.find(team_id)
     begin
       render json: teams.as_json(only: [:id, :name, :points, :hunt_id])
     rescue ActiveRecord::RecordNotFound

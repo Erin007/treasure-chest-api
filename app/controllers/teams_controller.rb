@@ -44,7 +44,7 @@ class TeamsController < ApplicationController
     #return the team
     team = Team.find(team_id)
     begin
-      render json: teams.as_json(only: [:id, :name, :points, :hunt_id])
+      render json: team.as_json(only: [:id, :name, :points, :hunt_id])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

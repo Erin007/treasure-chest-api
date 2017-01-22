@@ -28,7 +28,18 @@ class SubmissionsController < ApplicationController
   end
 
   def find_by_hunt
-    submissons = Submission.where(hunt_id: params[:hunt_id].to_i)
+    #find all of the directives associated with this hunt
+    directives = Directive.where(hunt_id: params[:hunt_id].to_i)
+
+    #store all of the ids from those directives
+    directive_ids =[]
+
+    directives.each do |d|
+      directive_ids << d.id.to_i
+    end
+
+    #use those ids to find any submission that is associated with this hunt
+    submissions = Submission.where(directive_id: directive_ids)
 
     begin
       render json: submissions.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])

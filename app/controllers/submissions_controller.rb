@@ -17,6 +17,16 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def find_by_team_and_directive
+    submission = Submission.where(team_id: params[:team_id], directive_id: params[:directive_id])
+
+    begin
+      render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def update
     begin
       submission.assign_attributes(submission_params)

@@ -32,7 +32,7 @@ class SubmissionsController < ApplicationController
       submission.assign_attributes(submission_params)
 
       if submission.save
-        render json: {id: submission.id, directive_id: submission.directive_id, team_id: directive.team_id, photo: directive.photo, caption: directive.caption, status: directive.status}
+        render json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status}
       else
         render status: :bad_request, json: {
           errors: submission.errors.messages

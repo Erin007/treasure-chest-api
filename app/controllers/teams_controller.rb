@@ -20,14 +20,14 @@ class TeamsController < ApplicationController
 
   def find_by_hunt_and_player
     #find all of the teams associated with the hunt id
-    teams_by_hunt = Team.where(hunt_id: params[:hunt_id])
+    teams_by_hunt = Team.where(hunt_id: params[:hunt_id].to_i)
     #find all of the teamplayers with the player_id
-    teamplayers = TeamPlayer.where(player_id: params[:player_id])
+    teamplayers = TeamPlayer.where(player_id: params[:player_id.to_i])
 
     #find all of the teams with the teamplayers
     team_ids = []
     teamplayers.each do |teamplayer|
-      team_ids << teamplayer.id
+      team_ids << teamplayer.team_id.to_i
     end
 
     teams_by_player = Team.where(id: team_ids)
@@ -42,7 +42,7 @@ class TeamsController < ApplicationController
     end
 
     #return the team
-    team = Team.find(team_id)
+    team = Team.find(team_id.to_i)
     begin
       render json: team.as_json(only: [:id, :name, :points, :hunt_id])
     rescue ActiveRecord::RecordNotFound

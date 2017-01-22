@@ -43,7 +43,7 @@ class HuntsController < ApplicationController
     hunt_ids = []
 
     teams.each do |team|
-      hunt_ids << team.hunt_id.to_i  #<<<<<----- YOU MESSED WITH THIS - LOOK HERE
+      hunt_ids << team.hunt_id.to_i 
     end
 
     hunts = Hunt.where(id: hunt_ids)

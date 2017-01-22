@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
   end
 
   def find_by_hunt_id
-    teams = Team.where(hunt_id: params[:hunt_id])
+    teams = Team.where(hunt_id: params[:hunt_id].to_i)
     begin
       render json: teams.as_json(only: [:id, :name, :points, :hunt_id])
     rescue ActiveRecord::RecordNotFound

@@ -18,13 +18,24 @@ class SubmissionsController < ApplicationController
   end
 
   def find_by_team_and_directive
-    submission = Submission.where(team_id: params[:team_id], directive_id: params[:directive_id])
+    submission = Submission.where(team_id: params[:team_id].to_i, directive_id: params[:directive_id].to_i)
 
     begin
       render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
+  end
+
+  def find_by_hunt
+    submissons = Submission.where(hunt_id: params[:hunt_id].to_i)
+
+    begin
+      render json: submissions.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+
   end
 
   def update

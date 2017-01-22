@@ -43,7 +43,7 @@ class HuntsController < ApplicationController
     hunt_ids = []
 
     teams.each do |team|
-      hunt_ids << team.hunt_id.to_i 
+      hunt_ids << team.hunt_id.to_i
     end
 
     hunts = Hunt.where(id: hunt_ids)
@@ -88,11 +88,6 @@ class HuntsController < ApplicationController
     end
   end
 
-  #def find_by_name
-
-  # def edit
-  # end
-
   def create
     puts "We're in the create method!"
     hunt2 = Hunt.new(hunt_params)
@@ -112,9 +107,9 @@ class HuntsController < ApplicationController
   end
 
 private
-  # def hunt
-  #  @hunt ||= Hunt.find(params[:id].to_i)
-  # end
+  def hunt
+   @hunt ||= Hunt.find(params[:id].to_i)
+  end
 
   def hunt_params
     params.permit(:description, :passcode, :name, :organizer_id)

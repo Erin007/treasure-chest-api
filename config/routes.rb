@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   # Finder routes for submissions
   get '/submissions/find/:team_id/:directive_id', to: 'submissions#find_by_team_and_directive'
 
+  get '/submissions/find/hunt/:hunt_id', to: 'submissions#find_by_hunt'
+
   # Finder routes for teams
   get '/teams/find/:hunt_id', to: 'teams#find_by_hunt_id'
 

@@ -21,7 +21,7 @@ class TeamsController < ApplicationController
   def find_by_hunt_and_player
     #find all of the teams associated with the hunt id
     teams_by_hunt = Team.where(hunt_id: params[:hunt_id].to_i)
-    
+
     #find all of the teamplayers with the player_id
     teamplayers = TeamPlayer.where(player_id: params[:player_id].to_i)
 
@@ -78,6 +78,14 @@ class TeamsController < ApplicationController
   def destroy
     begin
       team.destroy
+      
+      # deleting a team should also delete all of the teamplayer with that team_id because a player can not be on a team that doesn't exist
+      players = TeamPlayer.where(team_id: team.id.to_i)
+
+      players.each do |player|
+        player.destroy
+      end
+
       render status: :no_content, content: false
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false

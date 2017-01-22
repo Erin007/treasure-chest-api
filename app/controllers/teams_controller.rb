@@ -21,8 +21,9 @@ class TeamsController < ApplicationController
   def find_by_hunt_and_player
     #find all of the teams associated with the hunt id
     teams_by_hunt = Team.where(hunt_id: params[:hunt_id].to_i)
+    
     #find all of the teamplayers with the player_id
-    teamplayers = TeamPlayer.where(player_id: params[:player_id.to_i])
+    teamplayers = TeamPlayer.where(player_id: params[:player_id].to_i)
 
     #find all of the teams with the teamplayers
     team_ids = []

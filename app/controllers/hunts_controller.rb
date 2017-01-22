@@ -29,12 +29,12 @@ class HuntsController < ApplicationController
 
   def find_by_player
     # find the teamplayers that the player is part of
-    teamplayers = TeamPlayer.where(player_id: params[:player_id])
+    teamplayers = TeamPlayer.where(player_id: params[:player_id].to_i)
     # use the teamplayers to find the teams that the player is part of
     team_ids = []
 
     teamplayers.each do |teamplayer|
-      team_ids << teamplayer.team_id
+      team_ids << teamplayer.team_id.to_i
     end
 
     teams = Team.where(id: team_ids)
@@ -43,7 +43,7 @@ class HuntsController < ApplicationController
     hunt_ids = []
 
     teams.each do |team|
-      hunt_ids << team.id
+      hunt_ids << team.id.to_i
     end
 
     hunts = Hunt.where(id: hunt_ids)

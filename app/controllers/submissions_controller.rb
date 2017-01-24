@@ -21,7 +21,7 @@ class SubmissionsController < ApplicationController
     submission = Submission.where(team_id: params[:team_id].to_i, directive_id: params[:directive_id].to_i)
 
     begin
-      render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+      render json: submission[0].as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end

@@ -904,7 +904,10 @@ User.create([
 {
   username: "AdaLoveLace",
   email: "ada@email.com",
-  firebase: "lILMnOgIGJgvuWIFvGimcd0cm2m2"
+  firebase: "lILMnOgIGJgvuWIFvGimcd0cm2m2",
+  bio: "Founder of scientific computing and all around lady badass.",
+  location: "London, UK",
+  photo: '../assets/imgres.jpg'
 },
 { username: "Ms.Miller_English8",
   email: "teacher@email.com",
@@ -913,7 +916,10 @@ User.create([
 {
   username: "Erin",
   email: "erin@email.com",
-  firebase: 'zOX4358X5zfvamoR5VgEHJPKGfE3'
+  firebase: 'zOX4358X5zfvamoR5VgEHJPKGfE3',
+  bio: "Adie C6 Capstone Survivor (almost)",
+  location: "Seattle, WA",
+  photo: '../assets/xz.jpg'
 },
 {
   username: "Leah",

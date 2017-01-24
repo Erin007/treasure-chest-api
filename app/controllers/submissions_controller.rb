@@ -5,13 +5,13 @@ class SubmissionsController < ApplicationController
   def index
     render json: {
       count: Submission.count,
-      submissions: Submission.all.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+      submissions: Submission.all.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status, :directive_name])
     }
   end
 
   def show
     begin
-      render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+      render json: submission.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status, :directive_name])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -21,7 +21,7 @@ class SubmissionsController < ApplicationController
     submission = Submission.where(team_id: params[:team_id].to_i, directive_id: params[:directive_id].to_i)
 
     begin
-      render json: submission[0].as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+      render json: submission[0].as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status, :directive_name])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -42,7 +42,7 @@ class SubmissionsController < ApplicationController
     submissions = Submission.where(directive_id: directive_ids)
 
     begin
-      render json: submissions.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status])
+      render json: submissions.as_json(only: [:id, :directive_id, :team_id, :photo, :caption, :status, :directive_name])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -54,7 +54,7 @@ class SubmissionsController < ApplicationController
       submission.assign_attributes(submission_params)
 
       if submission.save
-        render json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status}
+        render json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status, directive_name: submission.directive_name}
       else
         render status: :bad_request, json: {
           errors: submission.errors.messages
@@ -74,13 +74,10 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
-
   def create
     submission = Submission.new(submission_params)
     if submission.save
-      render status: :created, json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status }
+      render status: :created, json: {id: submission.id, directive_id: submission.directive_id, team_id: submission.team_id, photo: submission.photo, caption: submission.caption, status: submission.status, directive_name: submission.directive_name }
     else
       render status: :bad_request, json: {
         errors: submission.errors.messages
@@ -94,7 +91,7 @@ private
   end
 
   def submission_params
-    params.permit(:directive_id, :team_id, :photo, :caption, :status)
+    params.permit(:directive_id, :team_id, :photo, :caption, :status, :directive_name)
   end
 
 end

@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   def index
     render json: {
       count: User.count,
-      teams: User.all.as_json(only: [:id, :username, :email, :firebase])
+      teams: User.all.as_json(only: [:id, :username, :email, :firebase, :location, :bio, :photo])
     }
   end
 
   def show
     begin
-      render json: user.as_json(only: [:id, :username, :email, :firebase])
+      render json: user.as_json(only: [:id, :username, :email, :firebase, :location, :bio, :photo])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def find_by_firebase
     users = User.where(firebase: params[:firebase].to_s)
     begin
-      render json: users.as_json(only: [:id, :username, :email, :firebase])
+      render json: users.as_json(only: [:id, :username, :email, :firebase, :location, :bio, :photo])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
     players = User.where(id: player_ids)
     begin
-      render json: players.as_json(only: [:id, :username, :email, :firebase])
+      render json: players.as_json(only: [:id, :username, :email, :firebase, :location, :bio, :photo])
     rescue ActiveRecord::RecordNotFound
       render status: :not_found, content: false
     end
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render status: :created, json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase }
+      render status: :created, json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase, location: user.location, bio: user.bio, photo: user.photo }
     else
       render status: :bad_request, json: {
         errors: user.errors.messages
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
       user.assign_attributes(user_params)
 
       if user.save
-        render json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase }
+        render json: {id: user.id, username: user.username, email: user.email, firebase: user.firebase, location: user.location, bio: user.bio, photo: user.photo }
       else
         render status: :bad_request, json: {
           errors: user.errors.messages
@@ -80,15 +80,13 @@ class UsersController < ApplicationController
     end
   end
 
-  # def edit
-  # end
 private
   def user
     @user||= User.find(params[:id].to_i)
   end
 
   def user_params
-    params.permit(:username, :email, :firebase)
+    params.permit(:username, :email, :firebase, :location, :bio, :photo)
   end
 
 end

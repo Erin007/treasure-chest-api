@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 20170124064910) do
     t.text     "description"
   end
 
+  create_table "organizers", force: :cascade do |t|
+    t.string   "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "firebase"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "firebase"
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.integer  "directive_id"
     t.integer  "team_id"

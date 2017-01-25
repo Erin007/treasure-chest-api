@@ -8,6 +8,13 @@
 
 Directive.create([
   {
+    name: 'A group of people enjoying a presentation',
+    description: '',
+    complete: "false",
+    point_value: 1,
+    hunt_id: 1
+  },
+  {
     name: 'A tour group',
     description: '',
     complete: "false",

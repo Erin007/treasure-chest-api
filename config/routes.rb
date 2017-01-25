@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/users/find/team/:team_id', to: 'users#find_by_team'
 
-  get '/users/find/email/:email', to: 'users#find_by_email'
+  post '/users/find/email', to: 'users#find_by_email'
 
   # Finder routes for directives
   get '/directives/find/:hunt_id', to: 'directives#find'

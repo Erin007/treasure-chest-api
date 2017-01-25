@@ -25,6 +25,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def find_by_email
+    user = User.where(email: params[:email])
+    begin
+      render json: user[0].as_json(only: [:id, :username, :email, :firebase, :location, :bio, :photo])
+    rescue ActiveRecord::RecordNotFound
+      render status: :not_found, content: false
+    end
+  end
+
   def find_by_team
     # find all of the teamplayers associated with the team
     teamplayers = TeamPlayer.where(team_id: params[:team_id].to_i)

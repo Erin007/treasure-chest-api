@@ -780,9 +780,9 @@ Directive.create([
 Hunt.create([
   {
     name: 'Ada: Explore Seattle',
-    description: 'Explore Seattle and bond with your new classmates at Ada Developers Academy. Each photo must feature at least one member of your team. You may not submit that same photo for multiple directives.',
+    description: 'Explore Seattle and bond with your new classmates at Ada Developers Academy. Each photo must feature at least two members of your team. You may not submit that same photo for multiple directives.',
     organizer_id: 1,
-    passcode: 'AdaLovelace'
+    passcode: 'Ada!'
   },
   {
     name: 'Gatsby Vocabulary',
